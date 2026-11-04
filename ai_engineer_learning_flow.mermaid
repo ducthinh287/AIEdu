@@ -1,0 +1,21 @@
+flowchart LR
+  A["1. Nền tảng<br/>Toán, Xác suất, Python, DSA, Linux, Git"]
+  B["2. Dữ liệu và ML truyền thống<br/>Pandas, SQL, PySpark, Airflow, Feature Eng., XGBoost"]
+  C["3. Deep Learning<br/>MLP, Backprop, Adam, Regularization, PyTorch"]
+
+  subgraph S["4. Chuyên môn hóa"]
+    direction TB
+    D1["Computer Vision<br/>CNN, ViT, YOLO, SAM, OCR"]
+    D2["NLP và LLM<br/>Transformer, LoRA, RAG, Agents"]
+    D3["RecSys<br/>Two-Tower, DCN, DLRM, NDCG"]
+  end
+
+  E["5. Tối ưu suy luận và Serving<br/>Quantization, ONNX, TensorRT, vLLM, FastAPI"]
+  F["6. MLOps và LLMOps<br/>Docker, K8s, MLflow, DVC, Ragas, Langfuse, Guardrails"]
+
+  A --> B --> C --> S --> E --> F
+
+  B -. "GBDT cho Ranking" .-> D3
+  D1 -. "VLM: CLIP, LLaVA" .-> D2
+  D2 -. "Embeddings, Vector Retrieval" .-> D3
+  F -. "Eval, giám sát, vòng phản hồi" .-> B
